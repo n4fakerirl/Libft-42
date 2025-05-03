@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:37:48 by ocviller          #+#    #+#             */
-/*   Updated: 2025/04/27 22:49:00 by ocviller         ###   ########.fr       */
+/*   Updated: 2025/05/03 13:13:28 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
-// int     main()
-// {
-//     printf("MY ATOI : %d\n", ft_atoi("  93223"));
-//     printf("REAL ATOI : %d\n", atoi("  93223"));
-//     printf("MY ATOI : %d\n", ft_atoi("  -0"));
-//     printf("REAL ATOI : %d\n", atoi("  -0"));
-//     printf("MY ATOI : %d\n", ft_atoi("-42"));
-//     printf("REAL ATOI : %d\n", atoi("-42"));
-//     printf("MY ATOI : %d\n", ft_atoi("42"));
-//     printf("REAL ATOI : %d\n", atoi("42"));
-//     printf("MY ATOI : %d\n", ft_atoi("  -+-45"));
-//     printf("REAL ATOI : %d\n", atoi("  -+-45"));
-//     printf("MY ATOI : %d\n", ft_atoi("1337abf89"));
-//     printf("REAL ATOI : %d\n", atoi("1337abf89"));
-//     printf("MY ATOI : %d\n", ft_atoi("2147483647"));
-//     printf("REAL ATOI : %d\n", atoi("2147483647"));
-//     printf("MY ATOI : %d\n", ft_atoi("2147483648"));
-//     printf("REAL ATOI : %d\n", atoi("2147483648"));
-// }

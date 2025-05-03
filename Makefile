@@ -6,19 +6,15 @@
 #    By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/27 22:30:15 by ocviller          #+#    #+#              #
-#    Updated: 2025/04/30 21:56:17 by ocviller         ###   ########.fr        #
+#    Updated: 2025/05/03 13:50:44 by ocviller         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_atoi.c \
-      ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_strncmp.c \
-	  ft_strrchr.c
+SRC = ft_atoi.c ft_strncmp.c ft_strrchr.c ft_calloc.c ft_memchr.c
 
-OBJ = ft_strdup.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_atoi.o \
-      ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_strncmp.o \
-	  ft_strrchr.o
+OBJ = ft_atoi.o ft_strncmp.o ft_strrchr.o ft_calloc.o ft_memchr.o
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

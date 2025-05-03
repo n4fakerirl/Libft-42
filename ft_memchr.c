@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 22:19:11 by ocviller          #+#    #+#             */
-/*   Updated: 2025/04/27 22:49:10 by ocviller         ###   ########.fr       */
+/*   Created: 2025/05/03 13:50:20 by ocviller          #+#    #+#             */
+/*   Updated: 2025/05/03 13:55:25 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	else if (c >= 'A' && c <= 'Z')
-		return (1);
-	else
-		return (0);
+    size_t i;
+    const unsigned char *str;
+
+    str = s;
+    i = 0;
+    while (i < n)
+    {
+        if (str[i] == (unsigned char)c)
+            return ((void *)&str[i]);
+        i++;
+    }
+    return (NULL);
 }
