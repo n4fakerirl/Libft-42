@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 16:24:43 by ocviller          #+#    #+#             */
-/*   Updated: 2025/05/04 16:30:05 by ocviller         ###   ########.fr       */
+/*   Updated: 2025/05/04 16:58:31 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	len = ft_strlen(s);
 	i = 0;
 	dest = malloc(sizeof(char) * (len + 1));
-    if (!dest)
-        return (NULL);
+	if (!dest)
+		return (NULL);
 	while (s[i])
 	{
 		dest[i] = f(i, s[i]);
