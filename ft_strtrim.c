@@ -6,13 +6,13 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 21:16:49 by ocviller          #+#    #+#             */
-/*   Updated: 2025/05/04 14:54:07 by ocviller         ###   ########.fr       */
+/*   Updated: 2025/05/05 16:10:11 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	check_sep(char const c, char const *set)
+static size_t	check_sep(char const c, char const *set)
 {
 	size_t	i;
 

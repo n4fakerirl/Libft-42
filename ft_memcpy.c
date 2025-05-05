@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/03 14:06:39 by ocviller          #+#    #+#             */
-/*   Updated: 2025/05/05 16:43:42 by ocviller         ###   ########.fr       */
+/*   Created: 2025/04/24 18:03:35 by ocviller          #+#    #+#             */
+/*   Updated: 2025/04/30 17:15:21 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	const unsigned char	*str1;
-	const unsigned char	*str2;
-	size_t				i;
+	size_t			i;
+	unsigned char	*source;
+	unsigned char	*dst;
 
+	if (!dest && !src)
+		return (NULL);
+	source = (unsigned char *)src;
+	dst = (unsigned char *)dest;
 	i = 0;
-	str1 = s1;
-	str2 = s2;
-	if (n == 0)
-		return (0);
 	while (i < n)
 	{
-		if (str1[i] > str2[i])
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
-		if (str1[i] < str2[i])
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		dst[i] = source[i];
 		i++;
 	}
-	return (0);
+	return (dest);
 }
