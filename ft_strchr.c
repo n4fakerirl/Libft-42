@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 19:05:31 by ocviller          #+#    #+#             */
-/*   Updated: 2025/05/05 16:07:07 by ocviller         ###   ########.fr       */
+/*   Updated: 2025/05/10 17:12:04 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != (char)c)
+	if (c == '\0')
+		return ((char *)s + ft_strlen(s));
+	while (*s != '\0')
 	{
-		if (*s == '\0')
-			return (NULL);
+		if (*s == (char)c)
+			return ((char *)s);
 		s++;
 	}
-	return ((char *)s);
+	return (NULL);
 }

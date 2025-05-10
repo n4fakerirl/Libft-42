@@ -6,13 +6,13 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:05:49 by ocviller          #+#    #+#             */
-/*   Updated: 2025/05/04 15:46:34 by ocviller         ###   ########.fr       */
+/*   Updated: 2025/05/10 17:05:14 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count(long long nbr)
+static int	ft_count(long long nbr)
 {
 	int	count;
 
