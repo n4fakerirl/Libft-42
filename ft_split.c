@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:13:04 by ocviller          #+#    #+#             */
-/*   Updated: 2025/05/10 17:01:15 by ocviller         ###   ########.fr       */
+/*   Updated: 2025/05/12 16:30:26 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,5 @@ char	**ft_split(char const *s, char c)
 		else
 			s++;
 	}
-	result[i] = NULL;
-	return (result);
+	return (result[i] = NULL, result);
 }
