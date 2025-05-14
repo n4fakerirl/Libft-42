@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:13:04 by ocviller          #+#    #+#             */
-/*   Updated: 2025/05/12 16:30:26 by ocviller         ###   ########.fr       */
+/*   Updated: 2025/05/14 17:12:50 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,12 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
-static int	word_len(const char *s, char c)
+static char	*malloc_word(const char *s, int len)
 {
-	int	len;
-
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	return (len);
-}
-
-static char	*malloc_word(const char *s, char c)
-{
-	int		len;
 	char	*word;
 	int		i;
 
 	i = 0;
-	len = word_len(s, c);
 	word = (char *)malloc(sizeof(char) * (len + 1));
 	if (!word)
 		return (NULL);
@@ -70,29 +58,52 @@ static void	ft_free(char **tab, int i)
 	free(tab);
 }
 
+static char	**ft_ft(char const *s, char c, char **result)
+{
+	int	i;
+	int	y;
+	int	len;
+
+	i = 0;
+	y = 0;
+	while (s[i])
+	{
+		len = 0;
+		while (s[i + len] && s[i + len] != c)
+			len++;
+		if (len > 0)
+		{
+			result[y] = malloc_word(s + i, len);
+			if (!result)
+				return (ft_free(result, y), NULL);
+			y++;
+		}
+		if (s[i] == c)
+			i++;
+		i += len;
+	}
+	return (result);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
 	char	**result;
+	int		count;
 
+	count = count_words(s, c);
 	i = 0;
-	if (!s)
-		return (NULL);
-	result = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (s[0] == '\0')
+	{
+		result = malloc(sizeof(char *) * 1);
+		if (!result)
+			return (NULL);
+		return (result[0] = NULL, result);
+	}
+	result = malloc(sizeof(char *) * (count + 1));
 	if (!result)
 		return (NULL);
-	while (*s)
-	{
-		if (*s != c)
-		{
-			result[i] = malloc_word(s, c);
-			if (!result[i])
-				return (ft_free(result, i), NULL);
-			i++;
-			s += word_len(s, c);
-		}
-		else
-			s++;
-	}
-	return (result[i] = NULL, result);
+	result = ft_ft(s, c, result);
+	result[count] = NULL;
+	return (result);
 }
