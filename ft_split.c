@@ -6,7 +6,7 @@
 /*   By: ocviller <ocviller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:13:04 by ocviller          #+#    #+#             */
-/*   Updated: 2025/05/14 17:12:50 by ocviller         ###   ########.fr       */
+/*   Updated: 2025/05/15 16:26:57 by ocviller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static char	**ft_ft(char const *s, char c, char **result)
 		if (len > 0)
 		{
 			result[y] = malloc_word(s + i, len);
-			if (!result)
+			if (!result[y])
 				return (ft_free(result, y), NULL);
 			y++;
 		}
@@ -104,6 +104,8 @@ char	**ft_split(char const *s, char c)
 	if (!result)
 		return (NULL);
 	result = ft_ft(s, c, result);
+	if (!result)
+		return (NULL);
 	result[count] = NULL;
 	return (result);
 }
