@@ -72,6 +72,14 @@ L'objectif est de recréer un ensemble de fonctions de la bibliothèque standard
 
 ---
 
+## 🖼️ Note du projet
+
+<p align="center">
+  <img width="199" height="169" alt="image" src="https://github.com/user-attachments/assets/4f3e91e7-6752-4e6a-b904-164c8a95f036" />
+</p>
+
+---
+
 ## 🫐 Auteur
 
 - Océane (ocviller)
